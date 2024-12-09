@@ -1,0 +1,242 @@
+/* General Reset */
+body, ul, li, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #f1f1f1; /* Light gray text for contrast */
+    font-family: 'Roboto', sans-serif;
+    background-color: #003366;
+}
+
+.navbar-header {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.navbar-header.hidden {
+    opacity: 0; /* Fade out by setting opacity to 0 */
+    pointer-events: none; /* Disable clicks when hidden */
+}
+.logo {
+    font-size: 2.5rem; /* Large text size */
+    font-weight: bold; /* Bold text */
+    color: #ffffff; /* White text */
+    text-transform: uppercase; /* Capitalize */
+    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black; /* Neon glow */
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+.navbars {
+    font-size: 1.2rem; /* Smaller than the name header */
+    font-weight: 600; /* Semi-bold for readability */
+    color: #f1f1f1; /* Use a consistent color with the header */
+}
+.navbars > ul > a:hover {
+    color: #4a90e2;
+}
+.navbars > ul > a {
+    text-decoration: none;
+    color: inherit;
+}
+.main-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    margin-bottom: 4em;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin-top: 1em;
+    line-height: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+}
+header {
+    background-image: radial-gradient(ellipse at center, rgba(0, 51, 102, 0.9) 0%, rgba(0, 0, 51, 1) 100%);
+    color: white; /* White text for high contrast */
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+title {
+    display: flex;
+    
+}
+
+header nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Page Content */
+main {
+    padding: 100px 20px; /* Adds spacing below the fixed header */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fade effects */
+}
+
+/* Fade-out class */
+.fade-out {
+    opacity: 0;
+}
+
+/* Fade-in class */
+.fade-in {
+    opacity: 1;
+}
+
+.projects-page {
+    color: #F5F5DC;
+}
+#contact-page {
+    color: #FFD700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.phone-info {
+    display:flex;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.phone-image {
+    max-width: 20px;
+    margin-right: 1em;
+}
+.email-info {
+    display: flex;
+}
+.email-image {
+    max-width: 20px;
+    margin-right: 1em;
+}
+.github-info {
+    display: flex;
+    margin-top: 1em;
+}
+.github-image {
+    max-width: 20px;
+    margin-right: 1em;
+}
+.github-text {
+    color: white;
+    text-decoration: none;
+}
+.github-text:hover {
+    color: #4a90e2; 
+}
+.linkedIn-info {
+    display: flex;
+    margin-top: 1em;
+}
+.linkedIn-image {
+    max-width: 20px;
+    margin-right: 1em;
+}
+.linkedIn-text {
+    color: white;
+    text-decoration: none;
+}
+.linkedIn-text:hover {
+    color: #4a90e2; 
+}
+.nav-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.projects-page {
+    padding: 20px;
+    text-align: center;
+}
+
+.projects-title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.projects-container {
+    display: grid;
+    gap: 16px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.clickable-box {
+    display: block; /* Makes the entire box clickable */
+    border: 2px solid #ffffff;
+    border-radius: 8px;
+    padding: 16px;
+    text-decoration: none; /* Removes underline */
+    color: black; /* Text color */
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 50%;
+    @media (max-width:767px) {
+        min-height: 120px;
+    }
+}
+
+.clickable-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-color: #003366;
+    color: white;
+}
+
+.clickable-box::before,
+.clickable-box::after {
+    content: ''; /* Makes the pseudo-elements visible */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: #003366; /* The hover color */
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.clickable-box::before {
+    left: 0;
+}
+
+.clickable-box::after {
+    right: 0;
+}
+
+.clickable-box:hover::before,
+.clickable-box:hover::after {
+    width: 50%; /* Expands to fill half the width */
+}
+
+.clickable-box p {
+    margin: 8px 0;
+}
